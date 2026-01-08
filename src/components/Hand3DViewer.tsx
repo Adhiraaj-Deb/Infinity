@@ -225,6 +225,19 @@ export const Hand3DViewer: React.FC = () => {
                 </button>
             </div>
 
+            {/* Instructions Overlay - Top Right (Below Camera Button) */}
+            <div className="absolute top-20 right-6 pointer-events-none z-40 text-right space-y-1">
+                <p className="text-white/40 text-[10px] uppercase tracking-widest font-medium drop-shadow-sm">
+                    Pinch index & thumb to drag
+                </p>
+                <p className="text-white/40 text-[10px] uppercase tracking-widest font-medium drop-shadow-sm">
+                    Open palm to move
+                </p>
+                <p className="text-white/40 text-[10px] uppercase tracking-widest font-medium drop-shadow-sm leading-tight max-w-[200px] ml-auto">
+                    Pinch both hands & move to scale
+                </p>
+            </div>
+
 
             {/* Webcam Preview - Bottom Left */}
             <div className={`absolute bottom-6 left-6 pointer-events-auto transition-opacity duration-500 ${isCameraOn ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
