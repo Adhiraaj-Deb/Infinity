@@ -1,4 +1,4 @@
-import { FilesetResolver, HandLandmarker, type HandLandmarkerResult } from "@mediapipe/tasks-vision";
+import { FilesetResolver, HandLandmarker } from "@mediapipe/tasks-vision";
 
 export type HandLandmarks = Array<{ x: number; y: number; z?: number }>;
 

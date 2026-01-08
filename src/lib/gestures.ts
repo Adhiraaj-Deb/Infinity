@@ -13,7 +13,7 @@ export type GestureResult = {
 // State tracking for gesture transitions
 let previousHandState: "open" | "pinch" | "fist" | null = null;
 let fistStartTime: number | null = null;
-let wasInFist = false;
+// let wasInFist = false; // Removed unused variable
 
 // Helper to calculate roll/pitch/yaw
 // Helper to calculate roll/pitch/yaw using true 3D coordinates
@@ -202,7 +202,7 @@ export function detectGesture(
     if (previousHandState === "open" && currentState === "fist") {
         previousHandState = currentState;
         fistStartTime = now;
-        wasInFist = true;
+
         return {
             mode: "zoom_out",
             scaleDelta: 0.8  // Increased step size (was 0.95)
@@ -215,7 +215,7 @@ export function detectGesture(
 
         // Cycle Model Check: Quick gesture (< 600ms)
         if (fistDuration < 600) {
-            wasInFist = false;
+
             fistStartTime = null;
             previousHandState = currentState;
             return {
